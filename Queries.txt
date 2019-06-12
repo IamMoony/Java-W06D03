@@ -1,0 +1,122 @@
+Basic A0)
+
+SELECT * 
+FROM orders
+LEFT JOIN customer
+ON orders.fk_customerId = customer.customerId;
+
+Result Left Join:
+
+orderId	fk_customerId	orderDate	customerId	customerName	contactName	country	
+10308		1996-09-18	2	Ana Ananas	Fritz Brunner	Mexico	
+10309		1996-09-19	1	Alfreds Futterkiste	Maria Anders	Germany	
+10310		1996-09-20	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10311		1996-09-21	4	Josef Parker	Susan Gray	USA	
+10312		1996-09-22	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10313		1996-09-23	5	Konrad Kool	Mat Mew	Hungary	
+10314		1996-09-24	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10315		1996-09-25	7	Fritz Phantom	Armin Wolf	Austria	
+10316		1996-09-26	8	Tom Turbo	HC Strache	Austria	
+10317		1996-09-27	2	Ana Ananas	Fritz Brunner	Mexico	
+10318		1996-09-27	1	Alfreds Futterkiste	Maria Anders	Germany	
+10319		1996-09-28	10	Martina Statik	Mathias Prikobil	USA	
+10320		1996-09-29	4	Josef Parker	Susan Gray	USA	
+10321		1996-09-30	5	Konrad Kool	Mat Mew	Hungary	
+10322		1996-10-01	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10323		1996-10-02	7	Fritz Phantom	Armin Wolf	Austria	
+10324		1996-10-03	10	Martina Statik	Mathias Prikobil	USA	
+10325		1996-10-04	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10326		1996-10-05	4	Josef Parker	Susan Gray	USA	
+10327		1996-10-06	1	Alfreds Futterkiste	Maria Anders	Germany	
+10328		1996-10-07	2	Ana Ananas	Fritz Brunner	Mexico	
+10329		1996-10-08	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10330		1996-10-08	7	Fritz Phantom	Armin Wolf	Austria	
+10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
+10332		1996-10-10	9	Kaid Kasperl	Andi Goldberger	Slovakia	
+10333		1996-10-11	1	Alfreds Futterkiste	Maria Anders	Germany	
+10334		1996-10-11	2	Ana Ananas	Fritz Brunner	Mexico	
+10335		1996-10-12	4	Josef Parker	Susan Gray	USA	
+10336		1996-10-13	5	Konrad Kool	Mat Mew	Hungary	
+10337		1996-10-14	9	Kaid Kasperl	Andi Goldberger	Slovakia
+
+Result Right Join:
+
+orderId	fk_customerId	orderDate	customerId	customerName	contactName	country	
+10309		1996-09-19	1	Alfreds Futterkiste	Maria Anders	Germany	
+10318		1996-09-27	1	Alfreds Futterkiste	Maria Anders	Germany	
+10327		1996-10-06	1	Alfreds Futterkiste	Maria Anders	Germany	
+10333		1996-10-11	1	Alfreds Futterkiste	Maria Anders	Germany	
+10308		1996-09-18	2	Ana Ananas	Fritz Brunner	Mexico	
+10317		1996-09-27	2	Ana Ananas	Fritz Brunner	Mexico	
+10328		1996-10-07	2	Ana Ananas	Fritz Brunner	Mexico	
+10334		1996-10-11	2	Ana Ananas	Fritz Brunner	Mexico	
+10310		1996-09-20	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10325		1996-10-04	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10311		1996-09-21	4	Josef Parker	Susan Gray	USA	
+10320		1996-09-29	4	Josef Parker	Susan Gray	USA	
+10326		1996-10-05	4	Josef Parker	Susan Gray	USA	
+10335		1996-10-12	4	Josef Parker	Susan Gray	USA	
+10313		1996-09-23	5	Konrad Kool	Mat Mew	Hungary	
+10321		1996-09-30	5	Konrad Kool	Mat Mew	Hungary	
+10336		1996-10-13	5	Konrad Kool	Mat Mew	Hungary	
+10312		1996-09-22	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10314		1996-09-24	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10322		1996-10-01	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10329		1996-10-08	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10315		1996-09-25	7	Fritz Phantom	Armin Wolf	Austria	
+10323		1996-10-02	7	Fritz Phantom	Armin Wolf	Austria	
+10330		1996-10-08	7	Fritz Phantom	Armin Wolf	Austria	
+10316		1996-09-26	8	Tom Turbo	HC Strache	Austria		
+10332		1996-10-10	9	Kaid Kasperl	Andi Goldberger	Slovakia	
+10337		1996-10-14	9	Kaid Kasperl	Andi Goldberger	Slovakia	
+10319		1996-09-28	10	Martina Statik	Mathias Prikobil	USA	
+10324		1996-10-03	10	Martina Statik	Mathias Prikobil	USA	
+10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
+
+Result Inner Join:
+
+localhost/Java_Customers/orders/		http://localhost/phpmyadmin/tbl_sql.php?db=Java_Customers&table=orders&token=b4d76db55dd61b8447b092b197897455
+ Current selection does not contain a unique column. Grid edit, checkbox, Edit, Copy and Delete features are not available. 
+
+ Showing rows 0 - 24 (30 total, Query took 0.0005 seconds.)
+
+SELECT * 
+FROM orders
+INNER JOIN customer
+ON orders.fk_customerId = customer.customerId
+
+
+orderId	fk_customerId	orderDate	customerId	customerName	contactName	country	
+10309		1996-09-19	1	Alfreds Futterkiste	Maria Anders	Germany	
+10318		1996-09-27	1	Alfreds Futterkiste	Maria Anders	Germany	
+10327		1996-10-06	1	Alfreds Futterkiste	Maria Anders	Germany	
+10333		1996-10-11	1	Alfreds Futterkiste	Maria Anders	Germany	
+10308		1996-09-18	2	Ana Ananas	Fritz Brunner	Mexico	
+10317		1996-09-27	2	Ana Ananas	Fritz Brunner	Mexico	
+10328		1996-10-07	2	Ana Ananas	Fritz Brunner	Mexico	
+10334		1996-10-11	2	Ana Ananas	Fritz Brunner	Mexico	
+10310		1996-09-20	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10325		1996-10-04	3	Antonia Moreno	Paplo Warmhud	Mexico	
+10311		1996-09-21	4	Josef Parker	Susan Gray	USA	
+10320		1996-09-29	4	Josef Parker	Susan Gray	USA	
+10326		1996-10-05	4	Josef Parker	Susan Gray	USA	
+10335		1996-10-12	4	Josef Parker	Susan Gray	USA	
+10313		1996-09-23	5	Konrad Kool	Mat Mew	Hungary	
+10321		1996-09-30	5	Konrad Kool	Mat Mew	Hungary	
+10336		1996-10-13	5	Konrad Kool	Mat Mew	Hungary	
+10312		1996-09-22	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10314		1996-09-24	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10322		1996-10-01	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10329		1996-10-08	6	Gregor Warmhudlinger	Fritz Warmhudlinger	England	
+10315		1996-09-25	7	Fritz Phantom	Armin Wolf	Austria	
+10323		1996-10-02	7	Fritz Phantom	Armin Wolf	Austria	
+10330		1996-10-08	7	Fritz Phantom	Armin Wolf	Austria	
+10316		1996-09-26	8	Tom Turbo	HC Strache	Austria	
+10332		1996-10-10	9	Kaid Kasperl	Andi Goldberger	Slovakia	
+10337		1996-10-14	9	Kaid Kasperl	Andi Goldberger	Slovakia	
+10319		1996-09-28	10	Martina Statik	Mathias Prikobil	USA	
+10324		1996-10-03	10	Martina Statik	Mathias Prikobil	USA	
+10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
+
+
+
