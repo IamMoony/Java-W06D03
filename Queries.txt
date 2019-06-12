@@ -41,6 +41,12 @@ orderId	fk_customerId	orderDate	customerId	customerName	contactName	country
 
 Result Right Join:
 
+SELECT * 
+FROM orders
+RIGHT JOIN customer
+ON orders.fk_customerId = customer.customerId;
+
+
 orderId	fk_customerId	orderDate	customerId	customerName	contactName	country	
 10309		1996-09-19	1	Alfreds Futterkiste	Maria Anders	Germany	
 10318		1996-09-27	1	Alfreds Futterkiste	Maria Anders	Germany	
@@ -74,11 +80,6 @@ orderId	fk_customerId	orderDate	customerId	customerName	contactName	country
 10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
 
 Result Inner Join:
-
-localhost/Java_Customers/orders/		http://localhost/phpmyadmin/tbl_sql.php?db=Java_Customers&table=orders&token=b4d76db55dd61b8447b092b197897455
- Current selection does not contain a unique column. Grid edit, checkbox, Edit, Copy and Delete features are not available. 
-
- Showing rows 0 - 24 (30 total, Query took 0.0005 seconds.)
 
 SELECT * 
 FROM orders
@@ -118,5 +119,12 @@ orderId	fk_customerId	orderDate	customerId	customerName	contactName	country
 10324		1996-10-03	10	Martina Statik	Mathias Prikobil	USA	
 10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
 
+Intermediate A1)
+
+SELECT salesman.name, customer.custName, salesman.city, customer.city
+FROM customer
+INNER JOIN salesman
+ON customer.fk_salesmanId = salesman.salesmanId
+WHERE customer.city = salesman.city;
 
 
