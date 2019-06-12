@@ -119,12 +119,34 @@ orderId	fk_customerId	orderDate	customerId	customerName	contactName	country
 10324		1996-10-03	10	Martina Statik	Mathias Prikobil	USA	
 10331		1996-10-09	10	Martina Statik	Mathias Prikobil	USA	
 
-Intermediate A1)
+Intermediate 
+
+A1)
 
 SELECT salesman.name, customer.custName, salesman.city, customer.city
 FROM customer
 INNER JOIN salesman
 ON customer.fk_salesmanId = salesman.salesmanId
 WHERE customer.city = salesman.city;
+
+A2)
+
+Solution 1
+
+SELECT orders.ord_no, orders.purch_amt, customer.custName, customer.city
+FROM orders
+INNER JOIN customer ON orders.fk_customerId = customer.customerId
+WHERE orders.purch_amt >= 500 AND orders.purch_amt <= 2000;
+
+Solution 2
+
+SELECT orders.ord_no, orders.purch_amt, customer.custName, customer.city
+FROM orders
+INNER JOIN customer ON orders.fk_customerId = customer.customerId
+WHERE orders.purch_amt BETWEEN 500 AND 2000;
+
+
+
+
 
 
