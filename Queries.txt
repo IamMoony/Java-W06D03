@@ -145,6 +145,25 @@ FROM orders
 INNER JOIN customer ON orders.fk_customerId = customer.customerId
 WHERE orders.purch_amt BETWEEN 500 AND 2000;
 
+A3)
+
+SELECT orders.ord_no, orders.ord_date, orders.purch_amt, customer.custName, salesman.name, salesman.commission
+FROM orders
+INNER JOIN salesman ON orders.fk_salesmanId = salesman.salesmanId
+INNER JOIN customer ON orders.fk_customerId = customer.customerId;
+
+A4)
+
+1)
+SELECT * FROM customer
+WHERE customer.fk_salesmanId IS NULL;
+
+2)
+SELECT * FROM customer
+WHERE customer.fk_salesmanId IS NOT NULL;
+
+
+
 
 
 
